@@ -95,6 +95,18 @@
             font-weight: 300;
         }
 
+        .podcast-header p a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.2s;
+        }
+
+        .podcast-header p a:hover {
+            border-bottom-color: white;
+            opacity: 1;
+        }
+
         .player-section {
             padding: 30px;
             background: #f8f9fa;
@@ -479,7 +491,7 @@
     <div class="podcast-container">
         <div class="podcast-header">
             <h1>International Relations with J. S. Jowett</h1>
-            <p>Exploring Global Politics, Diplomacy & International Affairs</p>
+            <p>Exploring Global Politics, Diplomacy & International Affairs | <a href="https://jsjowett.wordpress.com" target="_blank" rel="noopener noreferrer">Visit Blog</a></p>
         </div>
 
         <div class="player-section">
@@ -752,6 +764,12 @@
             currentCover.src = episode.coverImage;
             currentTitle.textContent = episode.title;
             currentDescription.textContent = episode.description;
+
+            // Scroll to player section
+            document.querySelector('.player-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
 
             // Render episode links
             if (episode.links && episode.links.length > 0) {
