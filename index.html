@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Relations with J. S. Jowett - IR Podcast</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore international relations, political philosophy, and global politics through AI-powered podcasts. Interactive discussions on diplomacy, power, democracy, and geopolitical theory.">
+    <meta name="keywords" content="international relations, political philosophy, IR podcast, global politics, diplomacy, political theory, constructivism, realism, political power, democracy, geopolitics, J.S. Jowett">
+    <meta name="author" content="J. S. Jowett">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/">
+    <meta property="og:title" content="International Relations with J. S. Jowett - Political Philosophy Podcast">
+    <meta property="og:description" content="AI-powered interactive podcasts exploring international relations, political philosophy, and global affairs. Chat with AI hosts about diplomacy, power, and political theory.">
+    <meta property="og:image" content="https://yoursite.com/2025-10-12_22-39.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yoursite.com/">
+    <meta property="twitter:title" content="International Relations with J. S. Jowett - IR Podcast">
+    <meta property="twitter:description" content="Interactive podcasts on international relations, political philosophy, and global politics. Features AI chat for deeper exploration.">
+    <meta property="twitter:image" content="https://yoursite.com/2025-10-12_22-39.png">
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PodcastSeries",
+      "name": "International Relations with J. S. Jowett",
+      "description": "Exploring Global Politics, Diplomacy & International Affairs through interactive AI-powered discussions",
+      "author": {
+        "@type": "Person",
+        "name": "J. S. Jowett"
+      },
+      "url": "https://yoursite.com/",
+      "genre": ["Education", "Politics", "International Relations"],
+      "inLanguage": "en"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .podcast-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .podcast-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .podcast-header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .podcast-header p {
+            opacity: 0.95;
+            font-size: 1.15em;
+            font-weight: 300;
+        }
+
+        .player-section {
+            padding: 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .now-playing {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .episode-cover {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .episode-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .episode-info h3 {
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .episode-info p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 0.95em;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .play-btn:active {
+            transform: scale(0.95);
+        }
+
+        .progress-container {
+            flex: 1;
+        }
+
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-icon {
+            color: #666;
+            font-size: 20px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #e0e0e0;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            background: #3b82f6;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 14px;
+            height: 14px;
+            background: #3b82f6;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .episode-list {
+            padding: 30px;
+        }
+
+        .episode-list h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        .episode-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .episode-item:hover {
+            background: #f8f9fa;
+            border-color: #e0e0e0;
+        }
+
+        .episode-item.active {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+
+        .episode-thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .episode-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .episode-details h4 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 1.05em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .episode-details p {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .episode-duration {
+            color: #999;
+            font-size: 0.85em;
+            align-self: center;
+            flex-shrink: 0;
+        }
+
+        .episode-links {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .episode-links h3 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .link-button:hover {
+            background: #e0e0e0;
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+
+        .link-button.notebooklm {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-color: #059669;
+            font-weight: 600;
+        }
+
+        .link-button.notebooklm:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .link-icon {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 600px) {
+            .now-playing {
+                flex-direction: column;
+            }
+
+            .episode-cover {
+                width: 100%;
+                height: 200px;
+            }
+
+            .volume-control {
+                display: none;
+            }
+
+            .episode-item {
+                flex-direction: column;
+            }
+
+            .episode-thumbnail {
+                width: 100%;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="podcast-container">
+        <div class="podcast-header">
+            <h1>International Relations with J. S. Jowett</h1>
+            <p>Exploring Global Politics, Diplomacy & International Affairs</p>
+        </div>
+
+        <div class="player-section">
+            <div class="now-playing">
+                <img id="currentCover" class="episode-cover" src="https://via.placeholder.com/120/1e3a8a/ffffff?text=IR" alt="Episode Cover">
+                <div class="episode-info">
+                    <h3 id="currentTitle">Select an episode to play</h3>
+                    <p id="currentDescription">Choose from the episodes below</p>
+                </div>
+            </div>
+
+            <div class="audio-controls">
+                <button class="play-btn" id="playBtn">▶</button>
+                <div class="progress-container">
+                    <div class="time-info">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <div class="volume-control">
+                    <span class="volume-icon">🔊</span>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+                </div>
+            </div>
+
+            <div class="episode-links" id="episodeLinks" style="display: none;">
+                <h3>Resources & Interactive Features</h3>
+                <div class="links-grid" id="linksGrid"></div>
+            </div>
+        </div>
+
+        <div class="episode-list">
+            <h2>Episodes</h2>
+            <div id="episodesList"></div>
+        </div>
+
+        <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.9em; border-top: 1px solid #e0e0e0;">
+            Copyright ©2025 ABN: 15 384 058 395
+        </footer>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+    <script>
+        // Podcast episodes data
+        const episodes = [
+            {
+                id: 1,
+                title: "Theological Totalitarianism: Religion, Slavery, and Perpetual Conflict",
+                description: "An examination of how religious ideologies have been used to justify totalitarian control, slavery, and ongoing conflicts throughout history.",
+                audioUrl: "https://drive.google.com/uc?export=download&id=1Zd0Stl6dnGBKpDH5fJvelMk0NdkNOvcD",
+                videoUrl: "", // Add your video URL
+                coverImage: "./2025-10-12_23-11.png",
+                duration: "TBD",
+                links: [
+                    {
+                        title: "💬 Chat with this Podcast",
+                        url: "https://notebooklm.google.com/notebook/b3ecd55f-ff98-42ac-8e72-db36bb11b896?artifactId=5a430d4d-61c4-4a7a-b8f5-f850b8f93d8e",
+                        description: "Interact with AI hosts - ask questions and explore topics in real-time",
+                        type: "notebooklm"
+                    },
+                    {
+                        title: "🎬 Watch Video Presentation",
+                        url: "#", // Add your video URL (Google Drive or YouTube)
+                        description: "Full video lecture and discussion",
+                        type: "resource"
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "The Third Dimension of Power in Modern Democracy",
+                description: "Analyzing how power operates beyond decision-making and agenda-setting to shape preferences and perceptions in democratic systems.",
+                audioUrl: "https://drive.google.com/uc?export=download&id=1aT-Pmpg4I6eHniDMZhvnw4ffyVeRXlGD",
+                videoUrl: "", // Add your video URL
+                coverImage: "./2025-10-12_23-12.png",
+                duration: "TBD",
+                links: [
+                    {
+                        title: "💬 Chat with this Podcast",
+                        url: "https://notebooklm.google.com/notebook/2cf45e4c-3d8f-4181-95c2-a23bdd9efc8f?artifactId=cae5c1e8-8804-4eca-b239-f55691f67c1a",
+                        description: "Interact with AI hosts - ask questions and explore topics in real-time",
+                        type: "notebooklm"
+                    },
+                    {
+                        title: "🎬 Watch Video Presentation",
+                        url: "#", // Add your video URL
+                        description: "Full video lecture and discussion",
+                        type: "resource"
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: "Competition's Effect on Public Service Quality and Cost",
+                description: "Exploring the impact of competitive markets versus public monopolies on service delivery, quality standards, and economic efficiency.",
+                audioUrl: "https://drive.google.com/uc?export=download&id=1W_LE9lm1x3Q3JXnrwBJhPp9iY7UL9m-7",
+                videoUrl: "", // Add your video URL
+                coverImage: "./2025-10-12_23-31.png",
+                duration: "TBD",
+                links: [
+                    {
+                        title: "💬 Chat with this Podcast",
+                        url: "https://notebooklm.google.com/notebook/fbe19e7d-9dc9-4a99-b8ac-b34408f8a8e8?artifactId=9503cd68-af18-4671-8024-e89ccff575ce",
+                        description: "Interact with AI hosts - ask questions and explore topics in real-time",
+                        type: "notebooklm"
+                    },
+                    {
+                        title: "🎬 Watch Video Presentation",
+                        url: "#", // Add your video URL
+                        description: "Full video lecture and discussion",
+                        type: "resource"
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "Socrates and Sophistry in Political Philosophy",
+                description: "Contrasting Socratic dialectic with sophistic rhetoric and their implications for truth-seeking, ethics, and political discourse.",
+                audioUrl: "https://drive.google.com/uc?export=download&id=1dL_bW-BbT2IBYE3rDRan99N5FiEde-1K",
+                videoUrl: "", // Add your video URL
+                coverImage: "./2025-10-12_23-10.png",
+                duration: "TBD",
+                links: [
+                    {
+                        title: "💬 Chat with this Podcast",
+                        url: "https://notebooklm.google.com/notebook/06d5f19c-74be-4538-b1f1-2d0fe792e72a?artifactId=2dddfea4-be41-4095-9a56-da5b76d09640",
+                        description: "Interact with AI hosts - ask questions and explore topics in real-time",
+                        type: "notebooklm"
+                    },
+                    {
+                        title: "🎬 Watch Video Presentation",
+                        url: "#", // Add your video URL
+                        description: "Full video lecture and discussion",
+                        type: "resource"
+                    }
+                ]
+            },
+            {
+                id: 5,
+                title: "Marx's Paradox: Why the Communist Manifesto's 'Guaranteed Reality' Never Came to Pass",
+                description: "Exploring the contradictions in Marxist theory and why the predicted communist revolution failed to materialize in advanced capitalist societies.",
+                audioUrl: "https://drive.google.com/uc?export=download&id=1JxqOOkVIlxhhmAWcBlDPPT3cAbrM5Qp-",
+                videoUrl: "", // Add your video URL
+                coverImage: "./2025-10-12_22-39.png",
+                duration: "26:45",
+                links: [
+                    {
+                        title: "💬 Chat with this Podcast",
+                        url: "https://notebooklm.google.com/notebook/YOUR_NOTEBOOK_ID", // Add your NotebookLM link
+                        description: "Interact with AI hosts - ask questions and explore topics in real-time",
+                        type: "notebooklm"
+                    },
+                    {
+                        title: "🎬 Watch Video Presentation",
+                        url: "#", // Add your video URL
+                        description: "Full video lecture and discussion",
+                        type: "resource"
+                    }
+                ]
+            },
+            {
+                id: 6,
+                title: "North Korea, Nukes, and Narratives: Why Constructivism Beats Neorealism",
+                description: "A constructivist analysis of North Korea's nuclear program, examining how identity and norms shape international relations more than material power alone.",
+                audioUrl: "https://drive.google.com/uc?export=download&id=16Z7D0_Op9fApD0alEECBWSdE5xe3HCQc",
+                videoUrl: "", // Add your video URL
+                coverImage: "./2025-10-12_22-54.png",
+                duration: "27:15",
+                links: [
+                    {
+                        title: "💬 Chat with this Podcast",
+                        url: "https://notebooklm.google.com/notebook/YOUR_NOTEBOOK_ID", // Add your NotebookLM link
+                        description: "Interact with AI hosts - ask questions and explore topics in real-time",
+                        type: "notebooklm"
+                    },
+                    {
+                        title: "🎬 Watch Video Presentation",
+                        url: "#", // Add your video URL when ready
+                        description: "Full video lecture and discussion",
+                        type: "resource"
+                    }
+                ]
+            }
+        ];
+
+        // Player state
+        let currentEpisodeIndex = null;
+        let isPlaying = false;
+
+        // DOM elements
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playBtn = document.getElementById('playBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const currentCover = document.getElementById('currentCover');
+        const currentTitle = document.getElementById('currentTitle');
+        const currentDescription = document.getElementById('currentDescription');
+        const episodesList = document.getElementById('episodesList');
+        const episodeLinks = document.getElementById('episodeLinks');
+        const linksGrid = document.getElementById('linksGrid');
+
+        // Initialize
+        function init() {
+            renderEpisodes();
+            setupEventListeners();
+            audioPlayer.volume = 0.8;
+            // Load featured episode (Theological Totalitarianism - index 0)
+            loadEpisode(0);
+        }
+
+        // Render episodes list
+        function renderEpisodes() {
+            episodesList.innerHTML = episodes.map((episode, index) => `
+                <div class="episode-item" data-index="${index}">
+                    <img class="episode-thumbnail" src="${episode.coverImage}" alt="${episode.title}">
+                    <div class="episode-details">
+                        <h4>${episode.title}</h4>
+                        <p>${episode.description}</p>
+                    </div>
+                    <span class="episode-duration">${episode.duration}</span>
+                </div>
+            `).join('');
+
+            // Add click listeners to episodes
+            document.querySelectorAll('.episode-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const index = parseInt(item.dataset.index);
+                    loadEpisode(index);
+                });
+            });
+        }
+
+        // Load episode
+        function loadEpisode(index) {
+            currentEpisodeIndex = index;
+            const episode = episodes[index];
+
+            audioPlayer.src = episode.audioUrl;
+            currentCover.src = episode.coverImage;
+            currentTitle.textContent = episode.title;
+            currentDescription.textContent = episode.description;
+
+            // Render episode links
+            if (episode.links && episode.links.length > 0) {
+                episodeLinks.style.display = 'block';
+                linksGrid.innerHTML = episode.links.map(link => `
+                    <a href="${link.url}"
+                       class="link-button ${link.type === 'notebooklm' ? 'notebooklm' : ''}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       title="${link.description}">
+                        <span class="link-icon">${link.type === 'notebooklm' ? '🤖' : '🔗'}</span>
+                        <span>${link.title}</span>
+                    </a>
+                `).join('');
+            } else {
+                episodeLinks.style.display = 'none';
+            }
+
+            // Update active state
+            document.querySelectorAll('.episode-item').forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+
+            // Auto-play
+            playAudio();
+        }
+
+        // Play/Pause toggle
+        function togglePlay() {
+            if (currentEpisodeIndex === null) {
+                loadEpisode(0);
+            } else {
+                if (isPlaying) {
+                    pauseAudio();
+                } else {
+                    playAudio();
+                }
+            }
+        }
+
+        function playAudio() {
+            audioPlayer.play();
+            isPlaying = true;
+            playBtn.textContent = '⏸';
+        }
+
+        function pauseAudio() {
+            audioPlayer.pause();
+            isPlaying = false;
+            playBtn.textContent = '▶';
+        }
+
+        // Format time
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressFill.style.width = `${percent}%`;
+            currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+        }
+
+        // Seek in audio
+        function seek(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audioPlayer.currentTime = percent * audioPlayer.duration;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            playBtn.addEventListener('click', togglePlay);
+
+            audioPlayer.addEventListener('timeupdate', updateProgress);
+
+            audioPlayer.addEventListener('loadedmetadata', () => {
+                durationEl.textContent = formatTime(audioPlayer.duration);
+            });
+
+            audioPlayer.addEventListener('ended', () => {
+                pauseAudio();
+                // Auto-play next episode
+                if (currentEpisodeIndex < episodes.length - 1) {
+                    loadEpisode(currentEpisodeIndex + 1);
+                }
+            });
+
+            progressBar.addEventListener('click', seek);
+
+            volumeSlider.addEventListener('input', (e) => {
+                audioPlayer.volume = e.target.value / 100;
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.code === 'Space') {
+                    e.preventDefault();
+                    togglePlay();
+                }
+            });
+        }
+
+        // Initialize the player
+        init();
+    </script>
+</body>
+</html>
