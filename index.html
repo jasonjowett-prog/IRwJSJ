@@ -361,6 +361,21 @@
             font-size: 1.2em;
         }
 
+        .link-button.disabled {
+            background: #d1d5db;
+            border-color: #9ca3af;
+            color: #6b7280;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .link-button.disabled:hover {
+            background: #d1d5db;
+            border-color: #9ca3af;
+            color: #6b7280;
+            transform: none;
+        }
+
         /* Book Advertisement Section */
         .book-ad {
             background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
@@ -551,9 +566,10 @@
                     },
                     {
                         title: "🎬 Watch Video Presentation",
-                        url: "#", // Add your video URL (Google Drive or YouTube)
+                        url: "#",
                         description: "Full video lecture and discussion",
-                        type: "resource"
+                        type: "resource",
+                        disabled: true
                     }
                 ]
             },
@@ -574,9 +590,10 @@
                     },
                     {
                         title: "🎬 Watch Video Presentation",
-                        url: "#", // Add your video URL
+                        url: "#",
                         description: "Full video lecture and discussion",
-                        type: "resource"
+                        type: "resource",
+                        disabled: true
                     }
                 ]
             },
@@ -597,9 +614,10 @@
                     },
                     {
                         title: "🎬 Watch Video Presentation",
-                        url: "#", // Add your video URL
+                        url: "#",
                         description: "Full video lecture and discussion",
-                        type: "resource"
+                        type: "resource",
+                        disabled: true
                     }
                 ]
             },
@@ -620,7 +638,7 @@
                     },
                     {
                         title: "🎬 Watch Video Presentation",
-                        url: "#", // Add your video URL
+                        url: "https://notebooklm.google.com/notebook/06d5f19c-74be-4538-b1f1-2d0fe792e72a?artifactId=c796cad5-ce00-499d-962a-a9256e956875",
                         description: "Full video lecture and discussion",
                         type: "resource"
                     }
@@ -643,9 +661,10 @@
                     },
                     {
                         title: "🎬 Watch Video Presentation",
-                        url: "#", // Add your video URL
+                        url: "#",
                         description: "Full video lecture and discussion",
-                        type: "resource"
+                        type: "resource",
+                        disabled: true
                     }
                 ]
             },
@@ -666,7 +685,7 @@
                     },
                     {
                         title: "🎬 Watch Video Presentation",
-                        url: "#", // Add your video URL when ready
+                        url: "https://notebooklm.google.com/notebook/9d1b626d-5dac-4b7b-8d71-6e05459aec08?artifactId=a104e942-b7f5-4086-a340-c9583fc8d816",
                         description: "Full video lecture and discussion",
                         type: "resource"
                     }
@@ -738,10 +757,9 @@
             if (episode.links && episode.links.length > 0) {
                 episodeLinks.style.display = 'block';
                 linksGrid.innerHTML = episode.links.map(link => `
-                    <a href="${link.url}"
-                       class="link-button ${link.type === 'notebooklm' ? 'notebooklm' : ''}"
-                       target="_blank"
-                       rel="noopener noreferrer"
+                    <a href="${link.disabled ? 'javascript:void(0)' : link.url}"
+                       class="link-button ${link.type === 'notebooklm' ? 'notebooklm' : ''} ${link.disabled ? 'disabled' : ''}"
+                       ${link.disabled ? '' : 'target="_blank" rel="noopener noreferrer"'}
                        title="${link.description}">
                         <span class="link-icon">${link.type === 'notebooklm' ? '🤖' : '🔗'}</span>
                         <span>${link.title}</span>
