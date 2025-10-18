@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/</loc>
+        <lastmod>2025-10-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Podcast Episodes (Audio Files) -->
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/Marx's_Paradox__Why_the_Communist_Manifesto's_'Guaranteed_Reali.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/Meta-Enslavement_and_the_Three-State_Solution__How_Theological_.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/North_Korea,_Nukes,_and_Narratives__Why_Constructivism_Beats_Ne.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/Populism_s_Power_Play__How_Political_Actors_Exploit_Nationalism.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/Socrates_vs.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/The_Invisible_Fences__How_the_Third_Dimension_of_Power_Shapes_Y.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/Tribute_or_Trade__China_s_Belt_and_Road_Initiative_as_a_Geopoli.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://jasonjowett-prog.github.io/IRwJSJ/Uber,_Apple,_and_the__Effects_Test__When_Competition_Drives_Glo.m4a</loc>
+        <lastmod>2025-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
